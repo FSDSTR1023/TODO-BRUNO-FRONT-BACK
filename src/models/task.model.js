@@ -5,11 +5,10 @@ const taskSchema = new mg.Schema(
     title: {
       type: String,
       required: true,
-      trim: true,
     },
     description: {
       type: String,
-      trim: true,
+      require: true,
     },
     date: {
       type: Date,

@@ -9,7 +9,7 @@ export const getTasks = async (req, res) => {
 
 export const createTask = async (req, res) => {
   const { title, description, date } = req.body;
-  console.log(req.user);
+
   const newTask = new Task({
     title,
     description,
@@ -30,8 +30,8 @@ export const deleteTask = async (req, res) => {
   const taskDeleted = await Task.findByIdAndDelete(req.params.id);
   if (!taskDeleted)
     return res.status(404).json({ message: 'Tarea no encontrada' });
-  res.json({ message: `Tarea eliminada correctamente ${taskDeleted}` });
-  return res.status(204);
+  //res.json({ message: `Tarea eliminada correctamente ${taskDeleted}` });
+  return res.sendStatus(204);
 };
 
 export const updateTask = async (req, res) => {

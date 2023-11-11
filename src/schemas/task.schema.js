@@ -1,4 +1,4 @@
-import z from 'zod';
+import { z } from 'zod';
 
 export const createTaskSchema = z.object({
   title: z.string({
@@ -7,6 +7,4 @@ export const createTaskSchema = z.object({
   description: z.string({
     required_error: 'La descripción es requerida',
   }),
-
-  date: z.string().datetime().isOptional(),
 });

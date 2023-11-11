@@ -18,7 +18,7 @@ router.get('/tasks/:id', authRequired, getTask);
 router.post(
   '/tasks',
   authRequired,
-  //validateSchemaTask(createTaskSchema),
+  validateSchemaTask(createTaskSchema),
   createTask
 );
 router.delete('/tasks/:id', authRequired, deleteTask);
