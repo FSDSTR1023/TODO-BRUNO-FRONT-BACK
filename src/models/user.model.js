@@ -24,6 +24,16 @@ const userSchema = new mg.Schema(
       default:
         'https://thinksport.com.au/wp-content/uploads/2020/01/avatar-.jpg',
     },
+    name: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    surname: {
+      type: String,
+      required: true,
+      trim: true,
+    },
   },
 
   {

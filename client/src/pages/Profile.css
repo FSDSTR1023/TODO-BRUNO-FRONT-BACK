@@ -1,0 +1,35 @@
+.main_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.profile-container {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  border: 1px solid #ccc;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 10px 0 10px rgba(210, 185, 185, 0.5);
+}
+.profile-img-container {
+  padding: 20px;
+  margin: 20px;
+}
+
+.profile-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 20px;
+}
+.datos {
+  margin: 10px;
+  color: #ccc;
+}

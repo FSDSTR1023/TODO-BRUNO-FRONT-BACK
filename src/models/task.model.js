@@ -19,6 +19,18 @@ const taskSchema = new mg.Schema(
       ref: 'User',
       required: true,
     },
+    deadLine: {
+      type: Date,
+      default: null,
+    },
+    status: {
+      type: String,
+      default: 'pending',
+    },
+    isPrivate: {
+      type: Boolean,
+      default: true,
+    },
   },
   {
     timestamps: true,

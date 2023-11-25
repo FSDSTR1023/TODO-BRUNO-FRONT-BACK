@@ -8,3 +8,7 @@ export const connectDB = async () => {
     console.log('Error: ', error);
   }
 };
+// username brunoguerradevcode
+// password 5WWvIOyhm0Fd8iWo
+
+// mongodb+srv://brunoguerradevcode:5WWvIOyhm0Fd8iWo@my-task-user-app.nwwxyxd.mongodb.net/
