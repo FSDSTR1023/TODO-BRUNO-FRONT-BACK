@@ -1,10 +1,11 @@
+Dejo el .env para que lo podais probar.
 Este proyecto consta de dos partes.
 
-### Instalar MongoDB en Local
+
 
 ### Dentro de la carpeta general del proyecto ejecutar el comando npm install para instalar dependencias y hacer lo mismo dentro del directorio client
 
-### Para correr el proyecto ejecutar el comando npm run dev en ambos directorios
+### Para correr el proyecto ejecutar el comando npm run dev en ambos directorios tanto en la raiz como en la carpeta client
 
 # Parte de Servidor backend
 
