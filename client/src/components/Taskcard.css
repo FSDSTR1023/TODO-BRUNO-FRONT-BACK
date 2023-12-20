@@ -8,18 +8,18 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  margin-top: 40px;
-  width: 450px;
+  margin-top: 15px;
+  width: 350px;
   min-height: 500px;
   height: auto;
-  background-color: #171e25;
+  background-color: #fefeff;
   padding: 0 0 0 0;
   box-sizing: border-box;
   overflow: hidden;
   border: 1px solid #171e25;
   border-radius: 10px;
   box-shadow: 0 0 10px #5f7891;
-  padding: 25px;
+  padding: 20px;
 }
 .user-info {
   display: flex;
@@ -27,7 +27,7 @@
   flex-direction: row;
   align-items: center;
   margin-left: 15px;
-  color: rgb(172, 240, 242);
+  color: rgb(42, 46, 47);
   justify-content: space-between;
 }
 .user-img {
@@ -50,22 +50,25 @@
   flex-direction: row;
 }
 .btn {
+  color: white;
   margin: 10px;
   border: 1px solid #435b74;
   padding: 5px 15px;
   border-radius: 10px;
   font-size: 12px;
+  background-color: rgb(58, 121, 237);
 }
 
 .description {
-  color: rgb(172, 240, 242);
+  color: rgb(42, 46, 47);
   margin: 0 0 15px 1px;
   font-family: monospace;
   font-size: 0.9rem;
+  min-height: 150px;
 }
 .title {
   font-size: 1.1rem;
-  color: #3397fc;
+  color: rgb(42, 46, 47);
   text-decoration: underline;
   font-weight: bold;
   font-family: monospace;
@@ -77,7 +80,7 @@
   margin-right: 10px;
   font-family: monospace;
   font-size: 0.8rem;
-  color: rgb(172, 240, 242);
+  color: rgb(42, 46, 47);
   text-align: end;
 }
 .btn:hover {
@@ -91,4 +94,8 @@
 .status-btn {
   margin-top: 20px;
   margin-bottom: 0px;
+}
+
+.status {
+  font-size: 12px;
 }

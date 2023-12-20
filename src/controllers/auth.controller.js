@@ -6,8 +6,10 @@ import { TOKEN_SECRET } from '../config.js';
 
 export const register = async (req, res) => {
   const { name, surname, username, email, password } = req.body;
+  console.log(req.body, 'req.body from register');
   try {
     const userFound = await User.findOne({ email });
+    console.log(userFound, 'userFound');
     if (userFound) return res.status(400).json(['Email already exists']);
     const passwordHash = await bcrypt.hash(password, 10);
 
@@ -16,11 +18,12 @@ export const register = async (req, res) => {
       surname,
       username,
       email,
-      avatar,
       password: passwordHash,
     });
+    console.log(newUser, 'newUser');
 
     const userSaved = await newUser.save();
+    console.log(userSaved, 'userSaved');
     const token = await createAccesToken({ id: userSaved._id });
 
     res.cookie('token', token);

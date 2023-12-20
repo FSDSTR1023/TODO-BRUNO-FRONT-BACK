@@ -21,5 +21,8 @@ app.use(cookieParser());
 
 app.use('/api', authRoutes);
 app.use('/api', taskRoutes);
+app.get('/helper', (req, res) => {
+  res.send('Hello World');
+});
 
 export default app;

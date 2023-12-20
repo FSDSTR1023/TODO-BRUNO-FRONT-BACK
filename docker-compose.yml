@@ -1,0 +1,33 @@
+version: '1.0'
+volumes:
+  backend:
+  mongo:
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: DockerFile
+    ports:
+      - '3000:3000'
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+      - DB_USER=test
+      - DB_PASSWORD=test
+      - DB_NAME=todo-list-api
+      - DB_SERVER=localhost:27057
+
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: mongo:latest
+    ports:
+      - '27057:27057'
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: test
+      MONGO_INITDB_ROOT_PASSWORD: test
+
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27057/test --quiet

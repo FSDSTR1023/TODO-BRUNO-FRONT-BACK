@@ -3,6 +3,8 @@ import { useAuth } from '../context/AuthContext';
 import { useTasks } from '../context/TaskContext';
 import { useEffect, useState } from 'react';
 import TaskCard from '../components/TaskCard';
+import Button from '../components/Button';
+import { Link } from 'react-router-dom';
 
 const StatusTasksPage = (status) => {
   const [filteredTasks, setFilteredTasks] = useState([]);
@@ -11,6 +13,12 @@ const StatusTasksPage = (status) => {
 
   const { user } = useAuth();
   console.log(user);
+
+  const taskStatus = {
+    pending: 'Pending Task',
+    onprogress: 'In Progress Task',
+    completed: 'Completed Task',
+  };
 
   console.log(newStatus, ' <-- newStatus');
   console.log(Object.values(status).toLocaleString(), ' <-- status');
@@ -32,16 +40,30 @@ const StatusTasksPage = (status) => {
   }, [status, newStatus, tasks]);
 
   return (
-    <section className='flex flex-wrap gap-4 m-2 items-center justify-between'>
-      {filteredTasks.map((task) => {
-        return (
-          <TaskCard
-            task={task}
-            key={task._id}
-          />
-        );
-      })}
-    </section>
+    <>
+      <div className='flex flex-wrap gap-10 m-2 items-center justify-center p-10 '>
+        {Object.keys(taskStatus).map((key, i) => {
+          return (
+            <Link
+              to={`/tasks/${key}`}
+              key={i}>
+              <Button>{taskStatus[key]}</Button>
+            </Link>
+          );
+        })}
+      </div>
+      <hr className=' bg-gray-100 border-1'></hr>
+      <section className='flex flex-wrap gap-4 m-2 items-center justify-between'>
+        {filteredTasks.map((task) => {
+          return (
+            <TaskCard
+              task={task}
+              key={task._id}
+            />
+          );
+        })}
+      </section>
+    </>
   );
 };
 
